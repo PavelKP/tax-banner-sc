@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Checkbox } from '../../shared/checkbox/checkbox';
+import { PictureButton } from '../../shared/pictureButton';
 import { Radio } from '../../shared/radio/radio';
+import { Heading } from './heading';
 
 export const Popup = (props) => {
 
 	/* Add "popup--enlarged" class to popup with additional controls and etc */
 	return (
 			<article className="popup">
-				<h3 className="popup__heading">Налоговый вычет</h3>
-				<button className="popup__close button-reset" type="button" aria-label="Закрыть"></button>
+				<Heading>Налоговый вычет</Heading>
+				<PictureButton type="button" aria-label="Закрыть" url={`/assets/img/close.svg`} />
 				<p className="popup__description">Используйте налоговый вычет чтобы погасить ипотеку досрочно. Размер налогового вычета составляет <br className="popup__break"/> не более 13% от своего официального годового дохода.</p>
 				<section className="popup__count">
 					<h4 className="visually-hidden">Расчет налогового вычета на основании зарплаты</h4>
@@ -26,25 +28,10 @@ export const Popup = (props) => {
 							<legend className="form__subheading form__subheading--short">
 								Итого можете внести в качестве досрочных:
 							</legend>
-							<label className="form__label">
-								<input className="visually-hidden form__input-hidden" type="checkbox" name="payment" value="" defaultChecked/>
-								<span className="form__input form__input--box"></span>
-								<span className="form__text">78 000 рублей</span>
-								<span className="form__text form__text--pale">в 1-ый год</span>
-							</label>
-							<Checkbox name="payment" value="test" checked/>
-							<label className="form__label">
-								<input className="visually-hidden form__input-hidden" type="checkbox" name="payment" value="" defaultChecked />
-								<span className="form__input form__input--box"></span>
-								<span className="form__text">78 000 рублей</span>
-								<span className="form__text form__text--pale">в 3-ий год</span>
-							</label>
-							<label className="form__label">
-								<input className="visually-hidden form__input-hidden" type="checkbox" name="payment" value="" />
-								<span className="form__input form__input--box"></span>
-								<span className="form__text">78 000 рублей</span>
-								<span className="form__text form__text--pale">в 4-ый год</span>
-							</label>
+							<Checkbox name="payment" value="1" text={`78 000 рублей`} subText={`в 1-ый год`}/>
+							<Checkbox name="payment" value="2" checked text={`68 000 рублей`} subText={`в 2-ой год`}/>
+							<Checkbox name="payment" value="3" checked disabled text={`58 000 рублей`} subText={`в 3-ий год`}/>
+							<Checkbox name="payment" value="4" disabled text={`32 000 рублей`} subText={`в 4-ий год`}/>
 						</fieldset>
 						<fieldset className="from__control-set fieldset-reset" aria-labelledby="fake-legend-reduce">
 							<div className="form__control-set-wrapper">

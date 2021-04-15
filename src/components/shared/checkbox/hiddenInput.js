@@ -31,5 +31,10 @@ export const HiddenInput = styled.input.attrs({
       transform: rotate(-45deg);
     }
   }
+
+	&:disabled + ${Input} {
+		background: ${Variable.Color.greyLight};
+		border: 0;
+	}
 `;
 
