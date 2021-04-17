@@ -27,8 +27,23 @@ const Cursor = {
 	hand: `url("/assets/img/cursor-hand.svg"), pointer`,
 }
 const Resolution = {
+	mobileS: 320,
+	mobileM: 375,
+	mobileL: 425,
 	tablet: 768,
-	desktop: 1440,
+	laptop: 1024,
+	laptopL: 1440,
+	desktop: 2560,
+}
+const MediaQuery = {
+	mobileS: `(min-width: ${Resolution.mobileS}px)`,
+	mobileM: `(min-width: ${Resolution.mobileM}px)`,
+	mobileL: `(min-width: ${Resolution.mobileL}px)`,
+  tablet: `(min-width: ${Resolution.tablet}px)`,
+  laptop: `(min-width: ${Resolution.laptop}px)`,
+  laptopL: `(min-width: ${Resolution.laptopL}px)`,
+  desktop: `(min-width: ${Resolution.desktop}px)`,
+  desktopL: `(min-width: ${Resolution.desktop}px)`,
 }
 
 export default {
@@ -38,5 +53,5 @@ export default {
 	Shadow,
 	Outlie,
 	Cursor,
-	Resolution,
+	MediaQuery,
 };
