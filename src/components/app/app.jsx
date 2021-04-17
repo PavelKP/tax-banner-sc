@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GlobalStyle } from './global/index';
-import { Main } from './main/index';
-import { Popup } from './popup/popup';
+import { GlobalStyle } from './Global/Global';
+import { Main } from '../shared/main';
+import { Popup } from './Popup/Popup';
 
 const App = () => {
   return (

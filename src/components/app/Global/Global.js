@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'polished';
 import Variable from '../../variables';
 
 export const GlobalStyle = createGlobalStyle`
+	${normalize()}
   body {
     min-width: 320px;
     margin: 0;
