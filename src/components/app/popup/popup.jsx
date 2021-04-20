@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Checkbox } from '../../shared/Checkbox/Checkbox';
-import { PictureButton } from '../../shared/pictureButton';
-import { Radio } from '../../shared/Radio/Radio';
+import { Checkbox } from '~shared/Checkbox/Checkbox';
+import { PictureButton } from '~shared/pictureButton';
+import { Radio } from '~shared/Radio/Radio';
 import { Heading } from './heading';
-import { Fieldset } from '../../shared/fieldset';
+import { Fieldset } from '~shared/fieldset';
 import { PopupContainer } from './popupContainer';
-import { Legend } from '../../shared/legend';
+import { Legend } from '~shared/legend';
+import { TextInput } from '~shared/TextInput/TextInput';
 
 export const Popup = (props) => {
 	return (
@@ -18,9 +19,7 @@ export const Popup = (props) => {
 				<h4 className="visually-hidden">Расчет налогового вычета на основании зарплаты</h4>
 				<form className="form" action="">
 					<Fieldset bottom={10}>
-						<legend className="form__subheading">Ваша зарплата в месяц</legend>
-						<input className="form__input" type="text" placeholder="50 000 &#8381;" />
-						<p className="form__tooltip">Поле обязательно для заполнения</p>
+						<TextInput />
 						<button className="button button--text" type="button">Рассчитать</button>
 					</Fieldset>
 					<Fieldset bottom={20}>

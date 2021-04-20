@@ -8,6 +8,7 @@ const Path = {
   DIST: path.join(__dirname, '../public'),
   ASSETS: 'assets/',
   ROOT: path.join(__dirname, '../'),
+	SHARED: path.resolve(__dirname, '../src/components/shared'),
 }
 
 module.exports = {
@@ -112,6 +113,9 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+		alias: {
+			'~shared': Path.SHARED,
+		},
   },
 }
