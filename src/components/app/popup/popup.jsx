@@ -36,7 +36,7 @@ export const Popup = (props) => {
 								</h2>
 							<div className="form__tags-wrapper">
 								<Radio name="reduce" value="payment" checked>Платеж</Radio>
-								<Radio name="reduce" value="term" checked>Срок</Radio>
+								<Radio name="reduce" value="term">Срок</Radio>
 							</div>
 						</div>
 						<button className="button button--small" type="button">Добавить</button>

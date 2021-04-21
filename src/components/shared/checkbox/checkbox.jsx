@@ -5,7 +5,7 @@ import { HiddenInput } from './hiddenInput';
 import { Text } from './text';
 
 export const Checkbox = (props) => (
-	<Label>
+	<Label handCursor>
 		<HiddenInput name={props.name} value={props.value} defaultChecked={props.checked} disabled={props.disabled}/>
 		<Input box>{props.children}</Input>
 		<Text>{props.text}</Text>

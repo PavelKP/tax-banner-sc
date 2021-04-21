@@ -7,6 +7,7 @@ export const Label = styled.label`
 	align-items: center;
 
 	border-bottom: 1px solid ${Variable.Color.greyBlue};
+	cursor: ${(props) => props.handCursor ? Variable.Cursor.hand : `auto` };
 
 	${(props) => props.tag && `
 		align-items: flex-start;

@@ -32,8 +32,9 @@ export const HiddenInput = styled.input.attrs({
     }
   }
 
-	&:not(:disabled):checked:hover + ${Input} {
+	&:not(:disabled):hover + ${Input} {
 		border: 1px solid ${Variable.Color.black};
+
 		&::before {
       top: 4px;
       left: 2px;

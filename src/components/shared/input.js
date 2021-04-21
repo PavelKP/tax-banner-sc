@@ -17,29 +17,6 @@ border-radius: 3px;
 
 outline: none;
 
-&::placeholder {
-	color: ${Variable.Color.greyLight};
-}
-
-&:hover {
-	border-color: ${Variable.Color.black};
-}
-
-&:focus {
-	color: ${Variable.Color.black};
-	border-color: ${Variable.Color.greyBlue};
-}
-
-&:disabled {
-	border-color: ${Variable.Color.grey};
-	background-color: transparent;
-
-	// РАБОТАЕТ???? ПРОВЕРИТЬ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	&::placeholder {
-		color: ${Variable.Color.redIntense};
-	}
-}
-
 	${(props) => props.tag && `
 		display: flex;
 		justify-content: center;
@@ -54,7 +31,7 @@ outline: none;
 
 		font-size: 14px;
 
-		border: 0;
+		border: 1px solid transparent;
 		border-radius: 50px;
 
 		cursor: ${Variable.Cursor.hand};
@@ -82,6 +59,5 @@ outline: none;
 		padding: 0;
 
 		border-radius: 6px;
-		cursor: ${Variable.Cursor.hand};
 	`}
 `;
