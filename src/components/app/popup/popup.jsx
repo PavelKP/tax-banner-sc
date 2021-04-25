@@ -1,22 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
 import { Checkbox } from '~shared/Checkbox/Checkbox';
 import { PictureButton } from '~shared/pictureButton';
 import { Radio } from '~shared/Radio/Radio';
-import { Heading } from './heading';
+import { Heading } from '~shared/heading';
 import { Fieldset } from '~shared/fieldset';
 import { PopupContainer } from './popupContainer';
 import { Legend } from '~shared/legend';
-import { TextInput } from '~shared/TextInput/TextInput';
+import { TextInput } from '~shared/TextInput/TextInput.jsx';
+import { Description } from './description';
 
 export const Popup = (props) => {
 	return (
 		<PopupContainer>
-			<Heading>Налоговый вычет</Heading>
+			<Heading as="h3">Налоговый вычет</Heading>
 			<PictureButton type="button" aria-label="Закрыть" url={`/assets/img/close.svg`} />
-			<p className="popup__description">Используйте налоговый вычет чтобы погасить ипотеку досрочно. Размер налогового вычета составляет <br className="popup__break" /> не более 13% от своего официального годового дохода.</p>
+			<Description>
+				Используйте налоговый вычет чтобы погасить ипотеку досрочно. Размер налогового вычета составляет
+				<br className="popup__break" /> не более 13% от своего официального годового дохода.
+			</Description>
 			<section className="popup__count">
-				<h4 className="visually-hidden">Расчет налогового вычета на основании зарплаты</h4>
+				<Heading as="h4" visuallyHidden>Расчет налогового вычета на основании зарплаты</Heading>
 				<form className="form" action="">
 					<Fieldset bottom={10}>
 						<TextInput />
