@@ -34,9 +34,7 @@ export const Popup = (props) => {
 					</Fieldset>
 					<Fieldset aria-labelledby="fake-legend-reduce">
 						<div className="form__control-set-wrapper">
-							<h2 id="fake-legend-reduce" className="form__subheading form__subheading--tags" aria-hidden="true">
-								Что уменьшаем?
-								</h2>
+						<Heading id="fake-legend-reduce" as="h2" aria-hidden="true" subheading tags>Что уменьшаем?</Heading>
 							<div className="form__tags-wrapper">
 								<Radio name="reduce" value="payment" checked>Платеж</Radio>
 								<Radio name="reduce" value="term">Срок</Radio>
