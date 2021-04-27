@@ -8,6 +8,8 @@ import { PopupContainer } from './popupContainer';
 import { Legend } from '~shared/legend';
 import { TextInput } from '~shared/TextInput/TextInput.jsx';
 import { Description } from './description';
+import { Break } from './break';
+import { Section } from './section';
 
 export const Popup = (props) => {
 	return (
@@ -16,9 +18,9 @@ export const Popup = (props) => {
 			<PictureButton type="button" aria-label="Закрыть" url={`/assets/img/close.svg`} />
 			<Description>
 				Используйте налоговый вычет чтобы погасить ипотеку досрочно. Размер налогового вычета составляет
-				<br className="popup__break" /> не более 13% от своего официального годового дохода.
+				<Break /> не более 13% от своего официального годового дохода.
 			</Description>
-			<section className="popup__count">
+			<Section>
 				<Heading as="h4" visuallyHidden>Расчет налогового вычета на основании зарплаты</Heading>
 				<form className="form" action="">
 					<Fieldset bottom={10}>
@@ -43,7 +45,7 @@ export const Popup = (props) => {
 						<button className="button button--small" type="button">Добавить</button>
 					</Fieldset>
 				</form>
-			</section>
+			</Section>
 		</PopupContainer>
 	);
 }
