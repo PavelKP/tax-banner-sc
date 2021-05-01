@@ -7,11 +7,15 @@ import { Fieldset } from '~shared/fieldset';
 import { PopupContainer } from './popupContainer';
 import { Legend } from '~shared/legend';
 import { TextInput } from '~shared/TextInput/TextInput.jsx';
+import { Button } from '~shared/button.js';
 import { Description } from './description';
 import { Break } from './break';
 import { Section } from './section';
+import { Form } from './form';
+import { ControllSetWrapper } from './controlSetWrapper';
+import { TagWrapper } from './tagWrapper';
 
-export const Popup = (props) => {
+export const Popup = () => {
 	return (
 		<PopupContainer>
 			<Heading as="h3">Налоговый вычет</Heading>
@@ -22,10 +26,10 @@ export const Popup = (props) => {
 			</Description>
 			<Section>
 				<Heading as="h4" visuallyHidden>Расчет налогового вычета на основании зарплаты</Heading>
-				<form className="form" action="">
+				<Form action="">
 					<Fieldset bottom={10}>
-						<TextInput />
-						<button className="button button--text" type="button">Рассчитать</button>
+						<TextInput invalid={false} validateMessage="Поле обязательно для заполнения"/>
+						<Button text type="button">Рассчитать</Button>
 					</Fieldset>
 					<Fieldset bottom={20}>
 						<Legend short>Итого можете внести в качестве досрочных:</Legend>
@@ -35,16 +39,16 @@ export const Popup = (props) => {
 						<Checkbox name="payment" value="4" disabled text={`32 000 рублей`} subText={`в 4-ий год`} />
 					</Fieldset>
 					<Fieldset aria-labelledby="fake-legend-reduce">
-						<div className="form__control-set-wrapper">
+						<ControllSetWrapper>
 						<Heading id="fake-legend-reduce" as="h2" aria-hidden="true" subheading tags>Что уменьшаем?</Heading>
-							<div className="form__tags-wrapper">
+							<TagWrapper>
 								<Radio name="reduce" value="payment" checked>Платеж</Radio>
 								<Radio name="reduce" value="term">Срок</Radio>
-							</div>
-						</div>
-						<button className="button button--small" type="button">Добавить</button>
+							</TagWrapper>
+						</ControllSetWrapper>
+						<Button small type="button">Добавить</Button>
 					</Fieldset>
-				</form>
+				</Form>
 			</Section>
 		</PopupContainer>
 	);

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import Variable from '../../variables';
+import { Tooltip } from './tooltip';
 
-export const Input = styled.input.attrs({
+export const InnerTextInput = styled.input.attrs({
 	type: `text`,
 })`
 	display: block;
@@ -45,7 +46,32 @@ export const Input = styled.input.attrs({
 		}
 	}
 
+	${(props) => props.invalid && `
+		border-color: ${Variable.Color.crimson};
+		color: ${Variable.Color.crimson};
+
+		&::placeholder {
+			color: ${Variable.Color.crimson};
+		}
+
+		&:hover {
+			color: ${Variable.Color.crimson};
+			border-color: ${Variable.Color.crimson};
+		}
+
+		&:focus {
+			color: ${Variable.Color.crimson};
+			border-color: ${Variable.Color.crimson};
+		}
+
+		& + ${Tooltip} {
+			display: block;
+		}
+	}
+	`}
+
 	@media ${Variable.MediaQuery.tablet} {
   	margin-bottom: 7px;
 	}
 `;
+
