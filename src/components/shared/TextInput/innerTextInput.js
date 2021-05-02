@@ -30,10 +30,19 @@ export const InnerTextInput = styled.input.attrs({
 
 	&:focus {
 		color: ${Variable.Color.black};
+		border-color: ${Variable.Color.black};
+	}
+
+	&:focus:not(:focus-visible) {
+		color: ${Variable.Color.greyLight};
 		border-color: ${Variable.Color.greyBlue};
 	}
 
-	&:focus-within {
+	// focus-visible применяется, когда на элементе срабатывает :focus
+	// && браузер решает, что нужно сделать фокус видимым (mouse vs keyboard)
+	// На инпуты всегда вешает фокус и с mouse и с keyboard
+	&:focus-visible {
+		color: ${Variable.Color.black};
 		border-color: ${Variable.Color.black};
 	}
 

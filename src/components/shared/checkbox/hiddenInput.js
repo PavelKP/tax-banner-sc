@@ -45,5 +45,9 @@ export const HiddenInput = styled.input.attrs({
 		background: ${Variable.Color.greyLight};
 		border: 0;
 	}
+
+	&:focus:focus-visible + ${Input} {
+		outline: 2px solid ${Variable.Color.black};
+	}
 `;
 

@@ -32,24 +32,8 @@ export const HiddenInput = styled.input.attrs({
 		background-color: ${Variable.Color.crimson};
   }
 
-  // &:disabled:checked + ${Input} {
-  //   &::before {
-  //     background-color: ${Variable.Color.greyLight};
-  //   }
-  // }
-
-  // &:disabled:checked + ${Input} {
-  //   border-color: ${Variable.Color.greyLight};
-
-  //   &::before {
-  //     background-color: transparent;
-  //     border-color: ${Variable.Color.greyLight};
-  //   }
-  // }
-
-  // &:disabled ~ .form__description {
-  //   color: ${Variable.Color.greyLight};
-  // }
-
+	&:focus:focus-visible + ${Input} {
+		outline: 2px solid ${Variable.Color.black};
+	}
 `;
 
