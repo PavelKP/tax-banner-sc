@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import { Checkbox } from '~shared/Checkbox/Checkbox';
 import { PictureButton } from '~shared/pictureButton';
 import { Radio } from '~shared/Radio/Radio';
@@ -14,8 +14,26 @@ import { Section } from './section';
 import { Form } from './form';
 import { ControllSetWrapper } from './controlSetWrapper';
 import { TagWrapper } from './tagWrapper';
+import { TaxOptions } from './TaxOptions/TaxOptions';
 
 export const Popup = () => {
+	const formRef = useRef();
+	const salaryRef = React.createRef();
+
+	const [salary, setSalary] = useState(``);
+	const [invalid, setInvalid] = useState(false);
+
+	const [isOptions, setIsOptions] = useState(false);
+
+	const handleSalarySubmit = () => {
+		if (parseInt(salary) > 0 && parseInt(salary) <= 1000000) {
+			setIsOptions(salary);
+			setInvalid(false);
+		} else {
+			setInvalid(true);
+		}
+	}
+
 	return (
 		<PopupContainer>
 			<Heading as="h3">Налоговый вычет</Heading>
@@ -28,27 +46,16 @@ export const Popup = () => {
 				<Heading as="h4" visuallyHidden>Расчет налогового вычета на основании зарплаты</Heading>
 				<Form action="">
 					<Fieldset bottom={10}>
-						<TextInput invalid={false} validateMessage="Поле обязательно для заполнения"/>
-						<Button text type="button">Рассчитать</Button>
-					</Fieldset>
-					<Fieldset bottom={20}>
-						<Legend short>Итого можете внести в качестве досрочных:</Legend>
-						<Checkbox name="payment" value="1" text={`78 000 рублей`} subText={`в 1-ый год`} />
-						<Checkbox name="payment" value="2" checked text={`68 000 рублей`} subText={`в 2-ой год`} />
-						<Checkbox name="payment" value="3" checked disabled text={`58 000 рублей`} subText={`в 3-ий год`} />
-						<Checkbox name="payment" value="4" disabled text={`32 000 рублей`} subText={`в 4-ий год`} />
-					</Fieldset>
-					<Fieldset aria-labelledby="fake-legend-reduce">
-						<ControllSetWrapper>
-						<Heading id="fake-legend-reduce" as="h2" aria-hidden="true" subheading tags>Что уменьшаем?</Heading>
-							<TagWrapper>
-								<Radio name="reduce" value="payment" checked>Платеж</Radio>
-								<Radio name="reduce" value="term">Срок</Radio>
-							</TagWrapper>
-						</ControllSetWrapper>
-						<Button small type="button">Добавить</Button>
+						<TextInput
+							name="salary"
+							value={salary}
+							onChange={(evt) => setSalary(evt.target.value)}
+							invalid={invalid}
+							validateMessage="Введите сумму от 1 руб. до 1 000 000 руб."/>
+						<Button text type="button" onClick={handleSalarySubmit}>Рассчитать</Button>
 					</Fieldset>
 				</Form>
+				{isOptions && <TaxOptions />}
 			</Section>
 		</PopupContainer>
 	);

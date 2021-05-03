@@ -1,1 +1,24 @@
-/* not empty */
+/*
+	Нужно подключать в CSS или в SCSS иначе будет "дергунчик" шрифта при перерендере компонента
+	Как вариант - https://dev.to/alaskaa/how-to-import-a-web-font-into-your-react-app-with-styled-components-4-1dni
+	import шрифтов в createGlobalStyle, надо испытать.
+*/
+
+
+@font-face {
+	font-family: "lab-grotesque";
+	src: url("/assets/fonts/lab-grotesque-regular.woff2") format("woff2"),
+		url("/assets/fonts/lab-grotesque-regular.woff") format("woff");
+	font-style: normal;
+	font-display: swap;
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "lab-grotesque-medium";
+	src: url("/assets/fonts/lab-grotesque-medium.woff2") format("woff2"),
+		url("/assets/fonts/lab-grotesque-medium.woff") format("woff");
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+}

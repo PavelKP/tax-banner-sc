@@ -59,17 +59,11 @@ export const InnerTextInput = styled.input.attrs({
 		border-color: ${Variable.Color.crimson};
 		color: ${Variable.Color.crimson};
 
-		&::placeholder {
-			color: ${Variable.Color.crimson};
-		}
-
 		&:hover {
-			color: ${Variable.Color.crimson};
 			border-color: ${Variable.Color.crimson};
 		}
 
 		&:focus {
-			color: ${Variable.Color.crimson};
 			border-color: ${Variable.Color.crimson};
 		}
 
